@@ -2,12 +2,12 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-# Copiamos el backend completo
+# Copiar backend y frontend
 COPY backend /app
-
-# ✅ Copiamos también el frontend
 COPY frontend /app/frontend
+COPY .env /app/.env
 
+# Instalar dependencias
 RUN npm install
 
 EXPOSE 3000
